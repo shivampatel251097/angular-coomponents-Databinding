@@ -1,3 +1,4 @@
+import { element } from 'protractor';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'coomponents-Databinding';
+  title = 'components-Databinding';
+  serverElements = [{type: 'Server', name: 'Test', content: 'Just a test!'}];
+
+  onServerAdded(serverData: {serverName: string, serverContent: string}) {
+    this.serverElements.push({
+      type: 'Server',
+      name: serverData.serverName,
+      content: serverData.serverContent
+    });
+  }
+
+  onBlueprintAdded(bluePrintData: {serverName: string, serverContent: string}) {
+    this.serverElements.push({
+      type: 'Blueprint',
+      name: bluePrintData.serverName,
+      content: bluePrintData.serverContent
+    });
+  }
 }
+
