@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'components-Databinding';
-  serverElements = [{type: 'Server', name: 'Test', content: 'Just a test!'}];
+  serverElements = [];
 
   onServerAdded(serverData: {serverName: string, serverContent: string}) {
     this.serverElements.push({
